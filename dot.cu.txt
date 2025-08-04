@@ -35,8 +35,20 @@ int main(void) {
     
     cudaMemcpy(d_a, h_a, N * sizeof(int), cudaMemcpyHostToDevice);
     cudaMemcpy(d_b, h_b, N * sizeof(int), cudaMemcpyHostToDevice);
+
+    cudaEvent_t start, stop; 
+    cudaEventCreate(&start); 
+    cudaEventCreate(&stop); 
+    float milliseconds = 0; 
+
+    cudaEventRecord(start); 
     
     gpuAdd<<<1, N>>>(d_a, d_b, d_c);
+
+    cudaEventRecord(stop); 
+    cudaEventSynchronize(stop);
+
+    cudaEventElapsedTime(&milliseconds, start, stop); 
     
     cudaMemcpy(h_c, d_c, N * sizeof(int), cudaMemcpyDeviceToHost);
     
@@ -46,10 +58,15 @@ int main(void) {
     }
     
     printf("Dot Product is %d\n", h_c[0]);
-    
+    printf("Kernel execution time: %f milliseconds\n", milliseconds);
+
+    cudaEventDestroy(start); 
+    cudaEventDestroy(stop);
+
     cudaFree(d_a);
     cudaFree(d_b);
     cudaFree(d_c);
     
     return 0;
+
 }
