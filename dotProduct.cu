@@ -1,7 +1,7 @@
-#include "stdio.h"
-#include <cuda.h>
+#include <stdio.h>
 #include <cuda_runtime.h>
-
+// cuda.h is used for low-level API coding
+// cuda_runtime.h is used for high-level API coding
 #define N 8
 
 __global__ void gpuAdd(int *d_a, int *d_b, int *d_c) {
@@ -70,4 +70,5 @@ int main(void) {
     return 0;
 
 }
+
 
