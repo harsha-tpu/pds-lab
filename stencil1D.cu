@@ -4,14 +4,17 @@
 __constant__ int dwgt[2*RADIUS+1];
 
 __global__ void stencil1D(int *in, int *out, const int n) {
-  int tid = threadIdx.x;
-  int result = 0; 
-  for (int i = -RADIUS; i <= RADIUS; i++) {
-    if (i >= 0 && i < n) {
-      result += in[i]; 
+  int tid = threadIdx.x
+  if (tid < n) {
+    int result = 0; 
+    for (int i = -RADIUS; i <= RADIUS; i++) {
+      int idx = tid + i;
+      if (idx >= 0 && idx < n) {
+        result += in[idx] * dwgt[i + RADIUS]; 
+      }
     }
+    out[tid] = result; 
   }
-  out[tid] = result; 
 }
 
 int main() {
@@ -33,5 +36,8 @@ int main() {
   for (int i = 0; i < n; i++)
     printf("%d ", input[i]);
     printf("\n");
+
+  cudaFree(input); 
+  cudaFree(output);
   return 0; 
 }
