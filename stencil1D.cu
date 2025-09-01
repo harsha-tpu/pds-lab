@@ -28,13 +28,10 @@ int main() {
   cudaMemcpyToSymbol(dwgt, hwgt, width * sizeof(int));
   stencil1D<<<1, n>>>(input, output, n);
   cudaMemcpy(host, output, n * sizeof(int), cudaMemcpyDeviceToHost);
-  printf("Input List: ");
-  for (int i = 0; i < n; i++)
-    printf("%d ", input[i]);
-    printf("\n");
+
   printf("Output List: ");
   for (int i = 0; i < n; i++)
-    printf("%d ", input[i]);
+    printf("%d ", host[i]);
     printf("\n");
 
   cudaFree(input); 
