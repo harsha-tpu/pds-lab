@@ -1,5 +1,4 @@
-#include "stdio.h"
-#include <cuda.h>
+#include <stdio.h>
 #include <cuda_runtime.h>
 
 #define N 9
