@@ -4,7 +4,7 @@
 __constant__ int dwgt[2*RADIUS+1];
 
 __global__ void stencil1D(int *in, int *out, const int n) {
-  int tid = threadIdx.x
+  int tid = threadIdx.x;
   if (tid < n) {
     int result = 0; 
     for (int i = -RADIUS; i <= RADIUS; i++) {
@@ -38,3 +38,9 @@ int main() {
   cudaFree(output);
   return 0; 
 }
+
+//------------------------OUTPUT------------------------
+
+[cse7e23@node1 ~]$ nvcc stencil1D.cu
+[cse7e23@node1 ~]$ ./a.out
+Output List: 6 10 15 20 25 30 26 21
