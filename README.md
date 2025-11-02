@@ -9,9 +9,9 @@
 6. Implement **QuickSort Algorithm**
 
 `Distributed Algorithms`
-7. Implement **Chat Server App** with *multiple clients*
-8. Implement **Mutual Exclusion** in *distributed environment*
-9. Implement **Group Communication**
-10. Implement **Clock Synchronization** using *Berkeley Algorithm*
-11. Demonstrate **Leader Election Algorithm**
-12. Implement **Fault tolerance mechanism** using *Byzantine agreement*
+7. Implement **Chat Server App** with *multiple clients*  
+8. Implement **Mutual Exclusion** in *distributed environment*  
+9. Implement **Group Communication**  
+10. Implement **Clock Synchronization** using *Berkeley Algorithm*  
+11. Demonstrate **Leader Election Algorithm**  
+12. Implement **Fault tolerance mechanism** using *Byzantine agreement*  
