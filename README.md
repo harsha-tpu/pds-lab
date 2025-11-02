@@ -1,6 +1,6 @@
-## Parallel & Distributed Systems Laboratory
+# Parallel & Distributed Systems Laboratory
 
-### List of Experiments
+## List of Experiments
 
 #### Parallel Algorithms
 
