@@ -8,7 +8,7 @@
 5. Implement **Odd Even Transposition sort**
 6. Implement **QuickSort Algorithm**
 
-`Distributed Algorithms`
+`Distributed Algorithms`  
 7. Implement **Chat Server App** with *multiple clients*  
 8. Implement **Mutual Exclusion** in *distributed environment*  
 9. Implement **Group Communication**  
